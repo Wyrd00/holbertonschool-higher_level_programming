@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * 
+ * insert_node - insert new node in ascended order 
  * @head: linked list
  * @number: num to be inserted
  * Return: the address of the new node, or NULL if it failed
