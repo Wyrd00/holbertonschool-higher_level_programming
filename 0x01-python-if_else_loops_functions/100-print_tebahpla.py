@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+wee = ""
 for i in range(122, 96, -1):
         if i % 2 == 0:
-                print("{}".format(chr(i)), end="")
+                wee += chr(i)
         else:
-                print("{}".format(chr(i - 32)), end="")
+                wee += chr(i - 32)
+print("{}".format(wee), end="")
