@@ -1,3 +1,7 @@
 #!/usr/bin/python3
-from hidden_4 import *
-print("{}".format(dir(hidden_4)))
+if __name__ == "__main__":
+        import hidden_4
+        result = dir(hidden_4)
+        for i in range(0, len(result)):
+                if result[i][0] != '_':
+                        print("{}".format(result[i]))
