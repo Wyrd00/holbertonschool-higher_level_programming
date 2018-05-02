@@ -14,8 +14,7 @@ class Square:
         def my_print(self):
                 """Creating a public instance method called my_print"""
                 for i in range(self.__size):
-                        for j in range(self.__size):
-                                print("#", end="")
+                        print("{}".format("#" * self.__size), end="")
                         print()
 
         @property
