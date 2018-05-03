@@ -10,12 +10,13 @@ class Square:
 
         def area(self):
                 """Creating a public instance method called area"""
-                return self.__size * self.__size
+                return self.size * self.size
 
         def my_print(self):
             """Creating a public instance method called my_print"""
             if self.size == 0:
                 print()
+                return
             for m in range(self.position[1]):
                 print()
 
@@ -45,11 +46,11 @@ class Square:
 
         @position.setter
         def position(self, value):
-                x, y = value
                 """Setter for attribute position"""
+                x, y = value
                 if isinstance(value, tuple) and len(value) == 2 and \
-                isinstance(x, int) and isinstance(x, int) \
-                and x >= 0 and y >= 0:
+                   isinstance(x, int) and isinstance(y, int) \
+                   and x >= 0 and y >= 0:
                         self.__position = value
                 else:
                     print("position must be a tuple of 2 positive integers")
