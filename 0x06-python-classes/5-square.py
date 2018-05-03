@@ -16,8 +16,7 @@ class Square:
                 if self.size == 0:
                         print()
                 for i in range(self.__size):
-                        print("{}".format("#" * self.__size), end="")
-                        print()
+                        print("{}".format("#" * self.__size))
 
         @property
         def size(self):
