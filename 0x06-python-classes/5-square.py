@@ -13,6 +13,8 @@ class Square:
 
         def my_print(self):
                 """Creating a public instance method called my_print"""
+                if self.size == 0:
+                        print()
                 for i in range(self.__size):
                         print("{}".format("#" * self.__size), end="")
                         print()
