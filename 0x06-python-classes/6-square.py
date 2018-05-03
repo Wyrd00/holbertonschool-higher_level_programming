@@ -19,12 +19,8 @@ class Square:
             for m in range(self.position[1]):
                 print()
 
-            for j in range(self.__size):
+            for j in range(self.size):
                 print("{}{}".format(" " * self.position[0], "#" * self.size))
-
-        def position(self, size=0, position=(0, 0)):
-                """Creating a public instance method called position"""
-                return self.__position
 
         @property
         def size(self):
