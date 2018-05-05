@@ -1,0 +1,88 @@
+The ``add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is an example test file in text format. First import
+``add_integer`` from the ``add_integer`` module.
+
+        >>> add_integer = __import__('0-add_integer').add_integer
+
+Check for positive addition:
+        >>> add_integer(2, 4)
+        6
+
+Check for addition with one negative int:
+        >>> add_integer(-2, 4)
+        2
+
+Check for addition wiith two negative ints:
+        >>> add_integer(-2, -4)
+        -6
+
+Check for longer integers:
+        >>> add_integer(123123123123, 1)
+        123123123124
+
+Check for float addition (a):
+        >>> add_integer(2.2, 4)
+        6
+
+Check for float addition (b):
+        >>> add_integer(2, 4.4)
+        6
+
+Check for float addition with int string:
+        >>> add_integer(2, float('4.5'))
+        6
+
+Check if int a is None:
+        >>> add_integer(None, 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+Check if int b is None:
+        >>> add_integer(2, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+Check for correct data type (string):
+        >>> add_integer(2, '4')
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+Check if no arguments are passed:
+        >>> add_integer()
+        Traceback (most recent call last):
+                ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Check if one argument is passed:
+        >>> add_integer(2)
+        100
+
+Check if more than two arguments:
+        >>> add_integer(2, 2, 2)
+        Traceback (most recent call last):
+                ...
+        TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Check for True bool as both arguments:
+        >>> add_integer(True, True)
+        2
+
+Check for False bool as both arguments:
+        >>> add_integer(False, False)
+        0
+
+Check for first arg as False:
+        >>> add_integer(False)
+        98
+
+Check for first arg as bool and second as int:
+        >>> add_integer(True, float(9.8))
+        10
