@@ -9,3 +9,34 @@ This is an example test file in text format. First import
 
         >>> say_my_name = __import__('3-say_my_name').say_my_name
 
+Check that it works:
+    >>> say_my_name("Instant", "Pot")
+    My name is Instant Pot
+
+Check first_name is string:
+    >>> say_my_name(('Puff', 'Plum'), "Pot")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Check first_name only:
+    >>> say_my_name('Cranky')
+    My name is Cranky
+
+Check last_name is string:
+    >>> say_my_name("Instant", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Check if empty:
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Check if more than two args given:
+    >>> say_my_name("Derp", "Burp", "Merp")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
