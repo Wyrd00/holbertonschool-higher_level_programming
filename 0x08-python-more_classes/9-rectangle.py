@@ -46,9 +46,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        rect_1 = (rect_1.width * 2) + (rect_1.height * 2)
-        rect_2 = (rect_2.width * 2) + (rect_2.height * 2)
-        if rect_1 >= rect_2:
+        if rect_1.area() >= rect_2.area():
             return rect_1
         else:
             return rect_2
