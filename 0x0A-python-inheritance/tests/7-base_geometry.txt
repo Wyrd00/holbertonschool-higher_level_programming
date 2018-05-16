@@ -1,0 +1,37 @@
+The ``base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+
+
+Import this ratbag first:
+    >>> BaseGeo = __import__('7-base_geometry').BaseGeometry
+
+
+Check that area is failing properly:
+     >>> fail_me = BaseGeo()
+     >>> fail_me.area()
+     Traceback (most recent call last):
+     ...
+     Exception: area() is not implemented
+
+
+Check that type is not object:
+    >>> type(fail_me) is object
+    False
+
+
+Check that type is exactly from BaseGeo:
+    >>> type(fail_me) is BaseGeo
+    True
+
+
+Check for accurate isinstance:
+    >>> isinstance(fail_me, BaseGeo)
+    True
+    >>> isinstance(fail_me, object)
+    True
+    >>> isinstance(fail_me, int)
+    False
+
+

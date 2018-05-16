@@ -1,0 +1,62 @@
+The ``my_list`` module
+======================
+
+Using ``my_list``
+-------------------
+
+
+Import this mofo:
+    >>> MyList = __import__('1-my_list').MyList
+
+Create instance and populate with positive:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(4)
+    >>> my_list
+    [1, 2, 3, 4]
+
+Checking for all negative number:
+    >>> neg_list = MyList()
+    >>> neg_list.append(-2)
+    >>> neg_list.append(-9)
+    >>> neg_list.append(-2)
+    >>> neg_list
+    [-2, -9, -2]
+
+Checking for one negative number:
+    >>> one_neg = MyList()
+    >>> one_neg.append(2)
+    >>> one_neg.append(-9)
+    >>> one_neg.append(2)
+    >>> one_neg
+    [2, -9, 2]
+
+Inherits from original list:
+     >>> issubclass(MyList, list)
+     True
+
+Check type is same:
+    >>> type(eek) is MyList
+    True
+
+Check that instance is derived from class MyList:
+    >>> isinstance(eek, MyList)
+    True
+
+Check that type is not from list:
+    >>> type(eek) is list
+    False
+
+
+No arguments:
+    >>> eek = MyList()
+    >>> eek
+    []
+
+Too many arguments:
+    >>> too_much = MyList(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: __init__() takes 1 positional argument but 2 were given
