@@ -15,16 +15,13 @@ Check that area is failing properly:
      ...
      Exception: area() is not implemented
 
-
 Check that type is not object:
     >>> type(fail_me) is object
     False
 
-
 Check that type is exactly from BaseGeo:
     >>> type(fail_me) is BaseGeo
     True
-
 
 Check for accurate isinstance:
     >>> isinstance(fail_me, BaseGeo)
@@ -34,4 +31,29 @@ Check for accurate isinstance:
     >>> isinstance(fail_me, int)
     False
 
+Checking for integer_validator() works:
+    >>> fail_me.integer_validator('tehe', 5)
+    >>> fail_me.__dict__
+    {'_BaseGeometry__name': 'tehe', '_BaseGeometry__value': 5}
 
+Checking for no arg:
+     >>> fail_me.integer_validator()
+     Traceback (most recent call last):
+     ...
+     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Right error msg:
+    >>> fail_me.integer_validator('tehe', 'tehe')
+    Traceback (most recent call last):
+    ...
+    TypeError: tehe must be an integer
+
+   >>> fail_me.integer_validator('tehe', 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: tehe must be greater than 0
+
+    >>> fail_me.integer_validator('haha', -99)
+    Traceback (most recent call last):
+    ...
+    ValueError: haha must be greater than 0
