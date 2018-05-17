@@ -14,6 +14,9 @@ class Square(Rectangle):
     """
     def __init__(self, size):
         """Instances instantiates with size"""
-        super().integer_validator("size", size)
-        self.__size = size
+        self.integer_validator("size", size)
         super().__init__(size, size)
+
+    def __str__(self):
+        """creating string for class Square"""
+        return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
