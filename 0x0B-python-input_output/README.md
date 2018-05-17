@@ -14,3 +14,8 @@
 * What is deserialization
 * How to convert a Python data structure to a JSON string
 * How to convert a JSON string to a Python data structure
+
+### What is JSON
+* JSON, or JavaScript Object Notation, is a minimal, readable format for structuring data. It is used primarily to transmit data between a server and web application, as an alternative to XML. Squarespace uses JSON to store and organize site content created with the CMS.
+
+
