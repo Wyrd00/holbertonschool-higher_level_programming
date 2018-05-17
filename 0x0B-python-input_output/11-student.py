@@ -4,7 +4,6 @@
 Module with class Student
 
 """
-class_to_json = __import__('10-class_to_json').class_to_json
 
 
 class Student:
@@ -18,4 +17,4 @@ class Student:
 
     def to_json(self):
         """return dict representation of Student instance"""
-        return class_to_json(self)
+        return self.__dict__
