@@ -8,6 +8,7 @@ import json
 
 
 class Base:
+
     """
     Base of all other classes
     """
@@ -55,7 +56,7 @@ class Base:
             list_dict.append(cls.to_dictionary(list_objs[i]))
         filename = cls.__name__ + '.json'
         with open(filename, 'w', encoding='utf-8') as f:
-            f.write(Base.to_json_string(list_dict))
+            f.write(cls.to_json_string(list_dict))
 
     @classmethod
     def create(cls, **dictionary):
@@ -79,7 +80,7 @@ class Base:
         try:
             with open(filename, "r", encoding='utf-8') as f:
                 hoho = f.read()
-                hoho_obj = Base.from_json_string(hoho)
+                hoho_obj = cls.from_json_string(hoho)
                 for i in range(len(hoho_obj)):
                     new.append(cls.create(**hoho_obj[i]))
         except:

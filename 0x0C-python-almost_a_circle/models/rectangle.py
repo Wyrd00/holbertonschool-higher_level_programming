@@ -8,7 +8,9 @@ from models.base import Base
 
 
 class Rectangle(Base):
+
     """make rectangle, inherit class Base"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """class constructor for Rectangle"""
         self.width = width
@@ -106,7 +108,6 @@ class Rectangle(Base):
         else:
             for k, v in kwargs.items():
                 setattr(self, k, v)
-                #self.__dict__[k] = v
 
     def to_dictionary(self):
         """dict representation of Rectangle"""
