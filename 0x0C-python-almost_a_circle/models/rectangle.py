@@ -85,7 +85,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """override str method"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+               self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """reassign attribute with arg"""
@@ -111,7 +112,7 @@ class Rectangle(Base):
         """dict representation of Rectangle"""
         newdict = {}
         newdict['id'] = self.id
-        newdict['height'] = self.height 
+        newdict['height'] = self.height
         newdict['width'] = self.width
         newdict['x'] = self.x
         newdict['y'] = self.y

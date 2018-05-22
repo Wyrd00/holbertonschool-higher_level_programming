@@ -34,7 +34,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """override string of Square"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(
+               self.id, self.x, self.y, self.size)
 
     def update(self, *args, **kwargs):
         """update square self"""
@@ -57,7 +58,7 @@ class Square(Rectangle):
         """dictionary representaton of Sqaure"""
         newdict = {}
         newdict['id'] = self.id
-        newdict['size'] = self.height 
+        newdict['size'] = self.height
         newdict['x'] = self.x
         newdict['y'] = self.y
         return newdict
