@@ -29,7 +29,7 @@ class Base:
         need to be called as "Base.to_json_string b/c staticmethod
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            return []
         else:
             return json.dumps(list_dictionaries)
 
@@ -40,7 +40,7 @@ class Base:
         need to be called as "Base.from_json_string
         """
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
