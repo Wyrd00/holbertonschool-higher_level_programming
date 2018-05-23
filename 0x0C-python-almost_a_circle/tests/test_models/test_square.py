@@ -11,6 +11,7 @@ from io import StringIO
 from models.square import Square
 from models.base import Base
 
+
 class SquareTest(unittest.TestCase):
 
     def setUp(self):
@@ -115,7 +116,7 @@ class SquareTest(unittest.TestCase):
         """update empty parameter with arg update"""
         s = Square(4, 2, 1, 0)
         s.update()
-        self.assertEqual(str(s), '[Square] (0) 2/1 - 4')    
+        self.assertEqual(str(s), '[Square] (0) 2/1 - 4')
 
     def test_update_args_TypeError(self):
         """typeerror with arg update"""
@@ -181,8 +182,8 @@ class SquareTest(unittest.TestCase):
     def to_dict(self):
         """check that to_dictionary work"""
         d1 = self.r1.to_dictionary()
-        self.assertTrue(type(d1) is dict)
-        
+        self.assertTrue(isinstance(d1, dict))
+
     def to_dictionary_update(self):
         """check update for dict works"""
         s5 = (100, 120, 40, 10)
@@ -190,6 +191,12 @@ class SquareTest(unittest.TestCase):
         r = Square(11, 22, 33, 44)
         r.update(**d5)
         self.assertEqual(r.__dict__, d5)
+
+    def create_square(self):
+        """test normal use of create"""
+        s = {"id": 1, "size": 2, "x": 1, "y": 1}
+        new_s = Rectangle.create(**s)
+        self.assertEqual(str(new_s), "[Square] (1) 1/1 - 2")
 
     def test_save_to_file(self):
         """save_to_file under normal conditions"""
@@ -215,9 +222,4 @@ class SquareTest(unittest.TestCase):
         pobj = [r01, r02]
         Square.save_to_file(pobj)
         hiya = Square.load_from_file()
-
-#   tearDown(self):
- #       self.r1.dispose()
-  #      self.r2.dispose()
-   #     self.r3.dispose()
-    #    self.r4.dispose()
+        self.assertEqual(type(hiya), list)

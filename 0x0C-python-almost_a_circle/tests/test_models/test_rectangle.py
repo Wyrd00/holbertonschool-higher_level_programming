@@ -9,6 +9,7 @@ import json
 from models.rectangle import Rectangle
 from models.base import Base
 
+
 class RectangleTest(unittest.TestCase):
 
     def setUp(self):
@@ -135,7 +136,7 @@ class RectangleTest(unittest.TestCase):
         """update empty parameter with arg update"""
         r = Rectangle(4, 2, 1, 0, 6)
         r.update()
-        self.assertEqual(str(r), '[Rectangle] (6) 1/0 - 4/2')    
+        self.assertEqual(str(r), '[Rectangle] (6) 1/0 - 4/2')
 
     def test_update_args_TypeError(self):
         """typeerror with arg update"""
@@ -176,7 +177,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(str(r), '[Rectangle] (8) 5/15 - 30/20')
         r.update(id=9)
         self.assertEqual(str(r), '[Rectangle] (9) 5/15 - 30/20')
-    
+
     def test_kwargs_new_key(self):
         """non-existant key w/kwarg in instance"""
         r10 = Rectangle(4, 2, 1, 0, 8)
@@ -226,8 +227,14 @@ class RectangleTest(unittest.TestCase):
         d4 = self.r4.to_dictionary()
         self.assertEqual({"id": 7, "width": 10, "height": 7, "x": 1,
                           "y": 1}, d4)
-        self.assertTrue(type(d1) is dict)
-        
+        self.assertTrue(isinstance(d1, dict))
+
+    def create_rect(self):
+        """test normal use of create"""
+        rr = {"id": 2, "width": 1, "height": 1, "x": 1, "y": 1}
+        new_r = Rectangle.create(**rr)
+        self.assertEqual(str(new_r), "[Rectangle] (2) 1/1 - 1/1")
+
     def to_dictionary_update(self):
         """check update for dict works"""
         r5 = (100, 120, 40, 10, 42)
@@ -262,9 +269,4 @@ class RectangleTest(unittest.TestCase):
         pobj = [r01, r02]
         Rectangle.save_to_file(pobj)
         hiya = Rectangle.load_from_file()
-
-#   tearDown(self):
- #       self.r1.dispose()
-  #      self.r2.dispose()
-   #     self.r3.dispose()
-    #    self.r4.dispose()
+        self.assertTrue(isinstance(hiya, list))
