@@ -28,7 +28,7 @@ class Base:
         static method takes list_dict and return JSON rep
         need to be called as "Base.to_json_string b/c staticmethod
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -40,8 +40,7 @@ class Base:
         """
         if json_string is None or len(json_string) == 0:
             return []
-        else:
-            return json.loads(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
