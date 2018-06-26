@@ -1,4 +1,4 @@
---create second table and populate with rows and values
+-- create second table and populate with rows and values
 CREATE TABLE IF NOT EXISTS `second_table` (
     `id` INT,
     `name` VARCHAR(256);
