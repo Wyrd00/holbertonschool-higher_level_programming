@@ -1,8 +1,8 @@
 -- create second table and populate with rows and values
-CREATE TABLE IF NOT EXISTS `second_table` (
-    `id` INT,
-    `name` VARCHAR(256);
-    `score` INT);
+CREATE TABLE IF NOT EXISTS second_table (`id` INT,
+`name` VARCHAR(256),
+`score` INT);
+
 INSERT INTO `second_table` (`id`, `name`, `score`) 
 VALUES
     (1, "John", 10), 
