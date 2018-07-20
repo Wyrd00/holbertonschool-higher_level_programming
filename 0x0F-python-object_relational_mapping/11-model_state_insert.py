@@ -17,5 +17,7 @@ if __name__ == '__main__':
     session = Session()
     new_State = State(name='Louisiana')
     session.add(new_State)
+    for state in session.query(State).filter(State.name == 'Louisiana').all():
+        print(state.id)
     session.commit()
     session.close()
