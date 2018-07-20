@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# display values in state where name matches user input
+"""
+display values in state where name matches user input
+"""
 
 import MySQLdb
 from sys import argv
@@ -13,7 +15,8 @@ if __name__ == '__main__':
         db=argv[3])
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(argv[4]))
+        "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
+        .format(argv[4]))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
