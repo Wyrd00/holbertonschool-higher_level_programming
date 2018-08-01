@@ -5,7 +5,8 @@
 
 
 def find_peak(list_of_integers):
-    last = len(list_of_integers) - 1
+    #last needs to be entire length, list_of_int[-1] refer to last index
+    last = len(list_of_integers)
     mid = int(last / 2)
 
     if list_of_integers is None or len(list_of_integers) == 0:
@@ -20,8 +21,8 @@ def find_peak(list_of_integers):
             return list_of_integers[mid]
 
     except IndexError:
-        if list_of_integers[mid + 1] > list_of_integers[mid]:
-            return list_of_integers[mid + 1]
+        if list_of_integers[mid - 1] > list_of_integers[mid]:
+            return list_of_integers[mid - 1]
         else:
             return list_of_integers[mid]
 
