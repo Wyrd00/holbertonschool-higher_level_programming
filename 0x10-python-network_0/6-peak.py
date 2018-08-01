@@ -5,7 +5,9 @@
 
 
 def find_peak(list_of_integers):
-    #last needs to be entire length, list_of_int[-1] refer to last index
+    '''
+    last needs to be entire length, list_of_int[-1] refer to last index
+    '''
     last = len(list_of_integers)
     mid = int(last / 2)
 
@@ -16,8 +18,9 @@ def find_peak(list_of_integers):
         return list_of_integers[mid]
 
     try:
-        if list_of_integers[mid - 1] <= list_of_integers[mid] and \
-                list_of_integers[mid + 1] <= list_of_integers[mid]:
+        # if list_of_int[mid - 1] comes first, doesn't work, why?
+        if list_of_integers[mid + 1] <= list_of_integers[mid] and \
+                list_of_integers[mid - 1] <= list_of_integers[mid]:
             return list_of_integers[mid]
 
     except IndexError:
