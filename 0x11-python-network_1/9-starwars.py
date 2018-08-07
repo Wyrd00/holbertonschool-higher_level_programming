@@ -6,7 +6,7 @@
 import requests
 from sys import argv
 
-r = requests.get("https://swapi.co/api/people/?search=r2",
+r = requests.get("https://swapi.co/api/people",
                  params={'search': argv[1]})
 body = r.json()
 print("Number of results: {}".format(body.get('count')))
