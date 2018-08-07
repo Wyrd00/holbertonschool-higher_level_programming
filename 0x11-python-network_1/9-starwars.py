@@ -11,4 +11,4 @@ r = requests.get("https://swapi.co/api/people/?search=r2",
 body = r.json()
 print("Number of results: {}".format(body.get('count')))
 for search in body.get('results'):
-    print(search['name'])
+    print(search.get('name'))
