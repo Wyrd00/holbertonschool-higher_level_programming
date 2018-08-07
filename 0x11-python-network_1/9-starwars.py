@@ -6,9 +6,9 @@
 import requests
 from sys import argv
 
-r = requests.get("https://swapi.co/api/people",
-                 params={'search': argv[1]})
-body = r.json()
-print("Number of results: {}".format(body.get('count')))
-for search in body.get('results'):
-    print(search.get('name'))
+if __name__ == '__main__':
+    r = requests.get("https://swapi.co/api/people", params={'search': argv[1]})
+    body = r.json()
+    print("Number of results: {}".format(body.get('count')))
+    for search in body.get('results'):
+        print(search.get('name'))
