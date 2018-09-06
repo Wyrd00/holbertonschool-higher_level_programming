@@ -7,7 +7,7 @@ request.get(api, function (error, response, body) {
     let resp = JSON.parse(body)['results'];
     for (let chars of resp) {
       for (let wedge of chars['characters']) {
-        if (wedge === 'https://swapi.co/api/people/18/') {
+        if (wedge.includes('18')) {
           counter += 1;
         }
       }
